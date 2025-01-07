@@ -3809,7 +3809,7 @@ h6 {
 }
 
 .main-slider__two__content__title {
-  font-size: 100px;
+  font-size: 8px;
   line-height: 110px;
   letter-spacing: 10px;
   text-transform: uppercase;
@@ -4206,7 +4206,8 @@ h6 {
   -webkit-transition: -webkit-transform 400ms ease;
   transition: -webkit-transform 400ms ease;
   transition: transform 400ms ease;
-  transition: transform 400ms ease,  -webkit-transform 500ms ease;
+  transition: transform 400ms ease, 
+ -webkit-transform 500ms ease;
 }
 
 @media (max-width: 360px) {
@@ -4276,7 +4277,8 @@ h6 {
   -webkit-transition: -webkit-transform 500ms ease;
   transition: -webkit-transform 500ms ease;
   transition: transform 500ms ease;
-  transition: transform 500ms ease,  -webkit-transform 500ms ease;
+  transition: transform 500ms ease, 
+ -webkit-transform 500ms ease;
   z-index: 2;
 }
 
