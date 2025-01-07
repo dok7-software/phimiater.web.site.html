@@ -5473,7 +5473,6 @@ h6 {
 .service-page__carousel {
   background-color: var(--ogency-black);
   position: relative;
-  padding: 120px 0;
 }
 
 @media (max-width: 767px) {
