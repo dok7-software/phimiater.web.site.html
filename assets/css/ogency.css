@@ -4037,7 +4037,7 @@ h6 {
 # Client Carousel
 --------------------------------------------------------------*/
 .client-carousel {
-  padding-bottom: 80px;
+  padding-bottom: 10px;
   background-color: var(--ogency-black);
 }
 
@@ -5633,9 +5633,14 @@ h6 {
 }
 
 .project-one__item__hover {
+  display: flex;               /* Activamos Flexbox */
+  justify-content: center;     /* Centra el contenido horizontalmente */
+  align-items: center;         /* Centra el contenido verticalmente */
+  text-align: center;          /* Asegura que el texto dentro de los párrafos se centre horizontalmente */
+  height: 100%;                /* Asegura que el contenedor ocupe todo el espacio disponible */
+  padding: 20px;
   position: absolute;
   width: 337px;
-  height: 223px;
   top: 50px;
   left: 185px;
   pointer-events: none;
@@ -5644,8 +5649,9 @@ h6 {
   opacity: 0;
   transform: scale(0.8);
   transition: all .5s ease-out;
-  background-color: var(--ogency-black2);
+  background-color: var(--ogency-black);
   z-index: -1;
+  border: var(--ogency-base) solid 2px /* Borde exterior fino (blanco en este caso) */
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
