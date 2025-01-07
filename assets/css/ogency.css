@@ -3705,6 +3705,10 @@ h6 {
 
 @media (min-width: 991px) and (max-width: 1199px) {
   .main-slider__two__item {
+    min-height: 100vh; /* Asegura que cada diapositiva ocupe toda la altura de la ventana */
+    display: flex;
+    align-items: center; /* Centra el contenido verticalmente */
+    overflow: hidden;
     padding-top: 250px;
     padding-bottom: 215px;
   }
@@ -3725,7 +3729,7 @@ h6 {
   bottom: 0;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center center;
   transform: scale(1);
   z-index: 1;
   mix-blend-mode: luminosity;
