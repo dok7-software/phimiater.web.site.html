@@ -8113,7 +8113,7 @@ h6 {
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
-  padding: 120px 125px 90px;
+  padding: 120px 10px 65px;
 }
 
 @media (min-width: 1220px) {
@@ -8286,7 +8286,7 @@ h6 {
 }
 
 .award-one__trophy img {
-  mix-blend-mode: luminosity;
+  /* mix-blend-mode: luminosity; */
 }
 
 @media (max-width: 767px) {
@@ -9585,6 +9585,7 @@ h6 {
   font-size: 30px;
   letter-spacing: -1.2px;
   margin-bottom: 23px;
+  margin-top: 23px;
 }
 
 .services-details__content__text {
