@@ -4421,7 +4421,7 @@ h6 {
 
 .about-one__thumb__img {
   background-color: var(--ogency-black);
-  border-radius: 100%;
+  border-radius: 80%;
   display: inline-block;
   overflow: hidden;
   position: relative;
@@ -6508,7 +6508,7 @@ h6 {
 .testimonial-three {
   background-color: var(--ogency-black);
   position: relative;
-  padding: 52px 0 0;
+  padding: 52px 0 80px;
 }
 
 @media (max-width: 767px) {
