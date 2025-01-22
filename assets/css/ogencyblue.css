@@ -7043,7 +7043,7 @@ h6 {
 
 .why-choose__image {
   position: relative;
-  margin: 0 0 0 70px;
+  margin: 0 0 0 0px;
   max-width: 598px;
   text-align: center;
 }
