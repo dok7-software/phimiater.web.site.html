@@ -4431,15 +4431,15 @@ h6 {
 
 .about-one__thumb__img {
   background-color: var(--ogency-black);
-  border-radius: 50%;
-  display: inline-block;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
   overflow: hidden;
   position: relative;
 }
 
 .about-one__thumb__img img {
-  background-color: black;
-  max-width: 100%;
+  max-width: 70%;
   height: auto;
   mix-blend-mode: luminosity;
   transition: all 500ms ease;
@@ -6247,9 +6247,9 @@ h6 {
 }
 
 .testimonial-one__carousel.owl-carousel .owl-nav {
-  position: absolute;
+  position: relative;
   right: 0;
-  bottom: 120px;
+  bottom: 60px;
   margin: 0;
 }
 
@@ -11633,4 +11633,19 @@ body.boxed-wrapper .main-slider__one-item__content-curved-circle-box {
 
 body.boxed-wrapper .main-slider__one-item__shape-1 {
   display: none;
+}
+
+.custom-box {
+  width: 380px; /* Define el ancho del cuadrado */
+  height: 300px; /* Define la altura del cuadrado */
+  background-color: var(--ogency-base); /* Color del fondo */
+  display: flex; /* Activa Flexbox para centrar contenido */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  color: white; /* Color del texto */
+  font-size: 40px; /* Tamaño del texto */
+  font-weight: bold; /* Opcional: Negrita para el texto */
+  text-align: center; /* Asegura que el texto se alinee al centro */
+  border-radius: 8px; /* Opcional: Bordes redondeados */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Opcional: Sombra */
 }
