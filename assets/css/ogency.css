@@ -4719,7 +4719,7 @@ h6 {
 }
 
 .slider-text-one .slider-text-one__animate-text {
-  animation: text-scrolling 28s linear infinite;
+  animation: text-scrolling 8s linear infinite;
   animation-direction: reverse;
   will-change: transform;
   display: block;
