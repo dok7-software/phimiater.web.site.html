@@ -2527,6 +2527,12 @@ h6 {
   }
 }
 
+@media (min-width: 1200px) {
+  .custom-width {
+    width: 19%;
+  }
+}
+
 .main-menu__two .topbar__buttons a {
   color: #fff;
 }
@@ -4335,7 +4341,6 @@ h6 {
 .feature-one__item__hover-content--text {
   margin: 0 0 10px;
   padding: 0 0 31px;
-  border-bottom: 1px solid RGBA(var(--ogency-white-rgb), 0.1);
 }
 
 @media (max-width: 360px) {
@@ -4433,6 +4438,7 @@ h6 {
 }
 
 .about-one__thumb__img img {
+  background-color: black;
   max-width: 100%;
   height: auto;
   mix-blend-mode: luminosity;
@@ -5871,7 +5877,7 @@ h6 {
 .team-one {
   background-color: var(--ogency-black);
   position: relative;
-  padding: 31px 163px 90px;
+  padding: 90px 163px 90px;
 }
 
 .team-one.team-two {
@@ -6049,8 +6055,8 @@ h6 {
 
 .team-one__item__title {
   display: block;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 500;
   letter-spacing: -.96px;
   margin-bottom: 0;
 }
@@ -6225,7 +6231,7 @@ h6 {
   background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;
-  padding: 105px 0 0;
+  padding: 90px 163px 90px;
 }
 
 @media (max-width: 767px) {
@@ -6289,7 +6295,7 @@ h6 {
 
 .testimonial-one__item {
   position: relative;
-  padding: 0 0 55px 300px;
+  padding: 0 0 55px 100px;
   min-height: 253px;
 }
 
@@ -6346,7 +6352,7 @@ h6 {
 
 .testimonial-one__item__quote {
   font-size: 30px;
-  line-height: 50px;
+  line-height: 30px;
   font-weight: 300;
   margin-bottom: 34px;
 }
