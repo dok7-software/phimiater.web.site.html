@@ -751,8 +751,7 @@
         });
       });
     } else {
-      $(".one-page-scroll-menu li.current").removeClass("current");
-      $(".one-page-scroll-menu li:first").addClass("current");
+  
     }
   }
   /*-- Dynamic year --*/
