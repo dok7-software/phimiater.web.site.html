@@ -657,6 +657,28 @@
             </div>
           </section>
          
+        <!-- intro -->
+        <!-- <div class="intro">
+
+            <h2>	
+                
+                Hi. I am a photographer<br>
+                I capture
+
+                <span class="rotate-words" data-interval="3000">
+                    <span>life.</span>
+                    <span>moments.</span>
+                    <span>happiness.</span>
+                    <span>emotions.</span>
+                    <span>action.</span>
+                    <span>impression.</span>
+                    <span>beauty.</span>
+                </span>
+
+            </h2>
+
+        </div> -->
+        <!-- intro -->
           
 
         <!--Testimonial Start-->
@@ -751,37 +773,37 @@
                                 <h2 class="section-title__title">Formación 100% subvencionada y gratuita</h2>
                             </div><!-- section-title -->
                             <div class="contact-one__form-box">
-                                <form action="assets/inc/sendemail.php" class="contact-one__form contact-form-validated" novalidate="novalidate">
+                                <form id="contact-form" class="contact-one__form contact-form-validated" novalidate="novalidate">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="contact-one__input-box">
-                                                <input type="text" placeholder="Tu nombre" name="name">
+                                                <input type="text" id="name" placeholder="Tu nombre" name="name" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="contact-one__input-box">
-                                                <input type="email" placeholder="Tu email" name="email">
+                                                <input type="email" id="email" placeholder="Tu email" name="email" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="contact-one__input-box">
-                                                <input type="text" placeholder="Tu móvil" name="phone">
+                                                <input type="text" id="phone_number" placeholder="Tu móvil" name="phone_number">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="contact-one__input-box">
-                                                <select class="selectpicker" aria-label="Default select example">
-                                                    <option selected>Selecciona el programa</option>
-                                                    <option value="1">ESPAÑA EMPRENDE</option>
-                                                    <option value="2">TALENTO JOVEN</option>
-                                                    <option value="3">EMPRENDEDORAS</option>
-                                                    <option value="4">PRIMER</option>
+                                                <select id="program" class="selectpicker" aria-label="Default select example">
+                                                    <option selected disabled>Selecciona el programa</option>
+                                                    <option value="ESPAÑA EMPRENDE">ESPAÑA EMPRENDE</option>
+                                                    <option value="TALENTO JOVEN">TALENTO JOVEN</option>
+                                                    <option value="EMPRENDEDORAS">EMPRENDEDORAS</option>
+                                                    <option value="PRIMER">PRIMER</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="contact-one__input-box text-message-box">
-                                                <textarea name="message" placeholder="Comentario (opcional)"></textarea>
+                                                <textarea id="message" name="message" placeholder="Comentario (opcional)"></textarea>
                                             </div>
                                             <div class="contact-one__btn-box">
                                                 <button type="submit" class="ogency-btn">Enviar</button>
@@ -789,6 +811,47 @@
                                         </div>
                                     </div>
                                 </form>
+                                
+                                <!-- Script para EmailJS -->
+                                <!-- <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function() {
+                                        emailjs.init("H5mpOgQYUdvLjBhwp"); // Reemplaza con tu USER_ID
+                                
+                                        document.getElementById("contact-form").addEventListener("submit", function(e) {
+                                            e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+                                
+                                            const formData = {
+                                                name: document.getElementById("name").value,
+                                                email: document.getElementById("email").value,
+                                                phone: document.getElementById("phone_number").value,
+                                                program: document.getElementById("program").value,
+                                                message: document.getElementById("message").value
+                                            };
+                                
+                                            // Verifica que se seleccione un programa antes de enviar
+                                            if (formData.program === "Selecciona el programa") {
+                                                alert("Por favor, selecciona un programa.");
+                                                return;
+                                            }
+                                
+                                            // Enviar con EmailJS
+                                            emailjs.send("service_4r65vi7", "template_vhwtv28", formData)
+                                            .then(
+                                                function(response) {
+                                                    alert("¡Mensaje enviado con éxito!");
+                                                    document.getElementById("contact-form").reset(); // Limpia el formulario
+                                                },
+                                                function(error) {
+                                                    console.error("Error al enviar el mensaje:", error);
+                                                    alert("Error al enviar el mensaje.");
+                                                }
+                                            );
+                                        });
+                                    });
+                                </script> -->
+                                <!-- Script para EmailJS -->
+
                                 <div class="result"></div>
                             </div>
                         </div>
@@ -914,7 +977,6 @@
         </svg>
     </a>
     <!-- back-to-top-end -->
-
 
     <script src="assets/vendors/jquery/jquery-3.5.1.min.js"></script>
     <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
