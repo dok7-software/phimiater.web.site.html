@@ -787,12 +787,12 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="contact-one__input-box">
-                                                <input type="text" id="phone_number" placeholder="Tu móvil" name="phone_number">
+                                                <input type="text" id="phone" placeholder="Tu móvil" name="phone">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="contact-one__input-box">
-                                                <select id="program" class="selectpicker" aria-label="Default select example">
+                                                <select id="program" name="program" class="selectpicker" aria-label="Default select example">
                                                     <option selected disabled>Selecciona el programa</option>
                                                     <option value="ESPAÑA EMPRENDE">ESPAÑA EMPRENDE</option>
                                                     <option value="TALENTO JOVEN">TALENTO JOVEN</option>
@@ -813,10 +813,12 @@
                                 </form>
                                 
                                 <!-- Script para EmailJS -->
-                                <!-- <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+                                <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
                                 <script>
                                     document.addEventListener("DOMContentLoaded", function() {
-                                        emailjs.init("H5mpOgQYUdvLjBhwp"); // Reemplaza con tu USER_ID
+                                        emailjs.init({
+                                        publicKey: "H5mpOgQYUdvLjBhwp",
+                                        });
                                 
                                         document.getElementById("contact-form").addEventListener("submit", function(e) {
                                             e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
@@ -824,7 +826,7 @@
                                             const formData = {
                                                 name: document.getElementById("name").value,
                                                 email: document.getElementById("email").value,
-                                                phone: document.getElementById("phone_number").value,
+                                                phone: document.getElementById("phone").value,
                                                 program: document.getElementById("program").value,
                                                 message: document.getElementById("message").value
                                             };
@@ -836,7 +838,7 @@
                                             }
                                 
                                             // Enviar con EmailJS
-                                            emailjs.send("service_4r65vi7", "template_vhwtv28", formData)
+                                            emailjs.sendForm("service_4r65vi7", "template_pw0hsdc", this)
                                             .then(
                                                 function(response) {
                                                     alert("¡Mensaje enviado con éxito!");
@@ -849,8 +851,7 @@
                                             );
                                         });
                                     });
-                                </script> -->
-                                <!-- Script para EmailJS -->
+                                </script>
 
                                 <div class="result"></div>
                             </div>
