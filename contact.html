@@ -10,11 +10,14 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="Phimister’s Business School forma emprendedores con una metodología práctica en emprendimiento, liderazgo e innovación. Conéctate con empresas y acelera tu éxito." />
+    <meta name="description"
+        content="Phimister’s Business School forma emprendedores con una metodología práctica en emprendimiento, liderazgo e innovación. Conéctate con empresas y acelera tu éxito." />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet" />
 
 
     <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
@@ -51,12 +54,7 @@
                 <div class="container-fluid">
                     <div class="main-menu__logo">
                         <a href="index.html">
-                            <img
-                                src="assets/images/logo/phimister_logo.png"
-                                width="180"
-                                height="85"
-                                alt="Phimister"
-                            />
+                            <img src="assets/images/logo/phimister_logo.png" width="180" height="85" alt="Phimister" />
                         </a>
                     </div><!-- /.main-menu__logo -->
                     <div class="main-menu__nav">
@@ -95,37 +93,40 @@
                 </div><!-- section-title -->
                 <div class="contact-one__left text-center">
                     <div class="contact-one__form-box">
-                        <form action="assets/inc/sendemail.php" class="contact-one__form contact-form-validated" novalidate="novalidate">
+                        <form id="contact-form" class="contact-one__form contact-form-validated"
+                            novalidate="novalidate">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="contact-one__input-box">
-                                        <input type="text" placeholder="Tu nombre" name="name">
+                                        <input type="text" id="name" placeholder="Tu nombre" name="name" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="contact-one__input-box">
-                                        <input type="email" placeholder="Tu email" name="email">
+                                        <input type="email" id="email" placeholder="Tu email" name="email" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="contact-one__input-box">
-                                        <input type="text" placeholder="Tu móvil" name="phone">
+                                        <input type="text" id="phone" placeholder="Tu móvil" name="phone">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="contact-one__input-box">
-                                        <select class="selectpicker" aria-label="Default select example">
-                                            <option selected>Selecciona el programa</option>
-                                            <option value="1">ESPAÑA EMPRENDE</option>
-                                            <option value="2">TALENTO JOVEN</option>
-                                            <option value="3">EMPRENDEDORAS</option>
-                                            <option value="4">PRIMER</option>
+                                        <select id="program" name="program" class="selectpicker"
+                                            aria-label="Default select example">
+                                            <option selected disabled>Selecciona el programa</option>
+                                            <option value="ESPAÑA EMPRENDE">ESPAÑA EMPRENDE</option>
+                                            <option value="TALENTO JOVEN">TALENTO JOVEN</option>
+                                            <option value="EMPRENDEDORAS">EMPRENDEDORAS</option>
+                                            <option value="PRIMER">PRIMER</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="contact-one__input-box text-message-box">
-                                        <textarea name="message" placeholder="Comentario (opcional)"></textarea>
+                                        <textarea id="message" name="message"
+                                            placeholder="Comentario (opcional)"></textarea>
                                     </div>
                                     <div class="contact-one__btn-box">
                                         <button type="submit" class="ogency-btn">Enviar</button>
@@ -133,6 +134,49 @@
                                 </div>
                             </div>
                         </form>
+
+                        <!-- Script para EmailJS -->
+                        <script
+                            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                emailjs.init({
+                                    publicKey: "H5mpOgQYUdvLjBhwp",
+                                });
+
+                                document.getElementById("contact-form").addEventListener("submit", function (e) {
+                                    e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+
+                                    const formData = {
+                                        name: document.getElementById("name").value,
+                                        email: document.getElementById("email").value,
+                                        phone: document.getElementById("phone").value,
+                                        program: document.getElementById("program").value,
+                                        message: document.getElementById("message").value
+                                    };
+
+                                    // Verifica que se seleccione un programa antes de enviar
+                                    if (formData.program === "Selecciona el programa") {
+                                        alert("Por favor, selecciona un programa.");
+                                        return;
+                                    }
+
+                                    // Enviar con EmailJS
+                                    emailjs.sendForm("service_4r65vi7", "template_pw0hsdc", this)
+                                        .then(
+                                            function (response) {
+                                                alert("¡Mensaje enviado con éxito!");
+                                                document.getElementById("contact-form").reset(); // Limpia el formulario
+                                            },
+                                            function (error) {
+                                                console.error("Error al enviar el mensaje:", error);
+                                                alert("Error al enviar el mensaje.");
+                                            }
+                                        );
+                                });
+                            });
+                        </script>
+
                         <div class="result"></div>
                     </div>
                 </div>
@@ -180,7 +224,9 @@
         <!--Contact Info End-->
         <!--Google Map Start-->
         <section class="google-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.373992054592!2d2.1340613755328497!3d41.36595859732493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a498998ea760f9%3A0x8998f006854833de!2sGran%20Via%20de%20les%20Corts%20Catalanes%2C%20145%2C%20Sants-Montju%C3%AFc%2C%2008014%20Barcelona!5e0!3m2!1ses!2ses!4v1737459497718!5m2!1ses!2ses" class="google-map__one" allowfullscreen></iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.373992054592!2d2.1340613755328497!3d41.36595859732493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a498998ea760f9%3A0x8998f006854833de!2sGran%20Via%20de%20les%20Corts%20Catalanes%2C%20145%2C%20Sants-Montju%C3%AFc%2C%2008014%20Barcelona!5e0!3m2!1ses!2ses!4v1737459497718!5m2!1ses!2ses"
+                class="google-map__one" allowfullscreen></iframe>
         </section>
         <!--Google Map End-->
 
@@ -188,16 +234,12 @@
             <div class="container">
                 <div class="main-footer__top wow fadeInUp animated" data-wow-delay="100ms">
                     <a href="index.html" class="main-footer__logo">
-                        <img
-                            src="assets/images/logo/phimister_logo.png"
-                            width="180"
-                            height="85"
-                            alt="Phimister"
-                        />
+                        <img src="assets/images/logo/phimister_logo.png" width="180" height="85" alt="Phimister" />
                     </a><!-- /.footer-logo -->
                     <div class="main-footer__social">
                         <a href="https://www.instagram.com/phimistersbschool/"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/phimistersbschool/"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/company/phimistersbschool/"><i
+                                class="fab fa-linkedin"></i></a>
                         <!-- <a href="https://www.tiktok.com/"><i class="fab fa-tiktok"></i></a> -->
                         <!-- <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a> -->
                     </div><!-- /.footer-social -->
@@ -227,7 +269,9 @@
                         </div><!-- /.footer-widget -->
                     </div>
                 </div><!-- /.row -->
-                <p class="main-footer__copyright wow fadeInUp animated" data-wow-delay="500ms">© Copyright <span class="dynamic-year"></span><!-- /.dynamic-year --> by <a href="index.html">Phimister Business School</a></p>
+                <p class="main-footer__copyright wow fadeInUp animated" data-wow-delay="500ms">© Copyright <span
+                        class="dynamic-year"></span><!-- /.dynamic-year --> by <a href="index.html">Phimister Business
+                        School</a></p>
             </div><!-- /.container -->
         </footer><!-- /.main-footer -->
 
@@ -240,7 +284,8 @@
         <div class="mobile-nav__content">
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
             <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/logo-light.png" width="36" alt="ogency" /></a>
+                <a href="index.html" aria-label="logo image"><img src="assets/images/logo-light.png" width="36"
+                        alt="ogency" /></a>
             </div>
             <!-- /.logo-box -->
             <div class="mobile-nav__container"></div>
