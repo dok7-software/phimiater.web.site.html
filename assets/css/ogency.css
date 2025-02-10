@@ -11779,3 +11779,18 @@ body.boxed-wrapper .main-slider__one-item__shape-1 {
     0% { opacity: 1; transform: translateY(0px); }
 	100% { opacity: 0; transform: translateY(30px); }
 }	
+
+.campus-button {
+  overflow: hidden;
+  background-color: var(--ogency-base); /* Color de fondo */
+  color: white; /* Color del texto */
+  padding: 6px 20px; /* Espaciado interno */
+  border-radius: 50px; /* Bordes redondeados */
+  text-decoration: none; /* Quitar subrayado */
+  transition: background-color 0.3s ease; /* Transición suave */
+  
+}
+
+.campus-button:hover {
+  background-color: white; /* Cambio de color al pasar el mouse */
+}
