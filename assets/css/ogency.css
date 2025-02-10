@@ -11781,6 +11781,7 @@ body.boxed-wrapper .main-slider__one-item__shape-1 {
 }	
 
 .campus-button {
+  display: inline-block;
   overflow: hidden;
   background-color: var(--ogency-base); /* Color de fondo */
   color: white; /* Color del texto */
